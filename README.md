@@ -68,9 +68,9 @@ Both models are explained using **LIME**, which highlights the exact time interv
     Then open:
     `LSTM_LIME_Theft.ipynb` and `LIME_TRANSFORM_Theft.ipynb`
 5. **Run in Google Colab (Optional)**:
-- Upload the notebooks (`LSTM_LIME_Theft.ipynb`, `LIME_TRANSFORM_Theft.ipynb`) to Google Colab  
-- Set runtime type to **GPU** (for faster training)  
-- Install dependencies inside Colab if needed:
+   * Upload the notebooks (`LSTM_LIME_Theft.ipynb`, `LIME_TRANSFORM_Theft.ipynb`) to Google Colab 
+   * Set runtime type to **GPU** (for faster training)  
+   * Install dependencies inside Colab if needed:
 ```bash
 !pip install numpy pandas scikit-learn matplotlib tensorflow lime tqdm
 ```
