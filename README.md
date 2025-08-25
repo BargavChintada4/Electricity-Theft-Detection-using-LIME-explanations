@@ -91,13 +91,16 @@ This dataset forms the input for the **LSTM** and **Transformer** models, which 
     pip install -U pip
     pip install numpy pandas scikit-learn matplotlib tensorflow lime tqdm notebook
     ```
-4. **Run the Notebooks**:
+
+4. **Prepare the Dataset**:
+    * Place your dataset file `theft_data.csv` inside the project root (same directory as the notebooks).
+5. **Run the Notebooks**:
     ```bash
     jupyter notebook
     ```
     Then open:
     `LSTM_LIME_Theft.ipynb` and `LIME_TRANSFORM_Theft.ipynb`
-5. **Run in Google Colab (Optional)**:
+6. **Run in Google Colab (Optional)**:
    * Upload the notebooks (`LSTM_LIME_Theft.ipynb`, `LIME_TRANSFORM_Theft.ipynb`) to Google Colab 
    * Set runtime type to **GPU** (for faster training)  
    * Install dependencies inside Colab if needed:
