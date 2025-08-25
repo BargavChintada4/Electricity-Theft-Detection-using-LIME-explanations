@@ -15,6 +15,36 @@ Both models are explained using **LIME**, which highlights the exact time interv
 
 ---
 
+## 📂 Dataset Description (`theft_data.csv`)
+
+The dataset contains **smart meter electricity consumption data** collected at fixed intervals (typically every 15 or 30 minutes).  
+Each row corresponds to **one day of consumption** for a given customer/meter.  
+
+### 📑 File Structure
+- **`meter_id`** → Unique identifier for the electricity meter.  
+- **`dates`** → Date of the recorded usage (DD-MM-YYYY format).  
+- **`00:00, 00:15, 00:30, ... , 23:45`** → Smart meter readings across the 24-hour period, in kWh (time-series features).  
+- **`Label`** → Ground-truth class:  
+  - `0` → Normal consumption (non-theft)  
+  - `1` → Electricity theft (abnormal/fraudulent usage pattern)  
+
+### 📊 Example
+| meter_id     | dates       | 00:00 | 00:15 | 00:30 | ... | 23:45 | Label |
+|--------------|-----------|-------|-------|-------|-----|-------|-------|
+| KOL-22813039 | 01-12-2019 | 0.0   | 0.00  | 0.00  | ... | 0.15  | 0     |
+| KOL-22813039 | 02-12-2019 | 0.2   | 0.12  | 0.09  | ... | 0.10  | 1     |
+
+### ⚠️ Notes
+- The dataset is **imbalanced** → far fewer theft cases (`Label=1`) compared to normal cases.  
+- Preprocessing involves:
+  - Handling missing values (if any).  
+  - Normalizing/standardizing the consumption features.  
+  - Splitting into **train/validation/test** with stratified sampling.  
+
+This dataset forms the input for the **LSTM** and **Transformer** models, which analyze daily consumption patterns to detect theft.
+
+---
+
 ## 🚀 Features
 - ✅ **Handles Class Imbalance** using class weights.  
 - ✅ **Evaluates Model Performance** with Accuracy, Precision, Recall, and **F1-Score**.  
